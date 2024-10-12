@@ -34,15 +34,17 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col w-full">
-        <div className="relative w-full flex items-center justify-center">
-          <div className="bg-background w-full h-[400px] rounded-[100%]"></div>
+      <div className="flex flex-col w-full md:pb-20">
+        <div className="relative h-[400px] w-full flex items-center justify-center">
+          <div className="bg-background absolute w-[150vw] h-[400px] rounded-[100%]"></div>
+          {/* Curva */}
           <div className="absolute z-[-1] bg-primary w-1/2 h-[400px] rounded-[100%] blur-3xl opacity-35"></div>
-          <div className="absolute bottom-0 w-full h-[200px] bg-background"></div>
-
-          <div className="absolute w-full top-40 sm:top-28 md:top-20 left-0 flex flex-col items-center gap-6 overflow-hidden">
+          {/* Sombra da curva */}
+          <div className="absolute bottom-[-100px] w-full h-[400px] z-[-1] bg-background"></div>
+          {/* Background em baixo da curva */}
+          <div className="absolute w-full top-26 md:top-20 left-0 flex flex-col items-center gap-6 overflow-hidden">
             <h1 className="text-2xl font-bold">Nossas Aulas</h1>
-            <div className="flex gap-4">
+            <div className="flex gap-4 py-2 h-[190px] sm:h-[230px] md:h-[250px]">
               <div className="flex flex-col gap-2 justify-center items-center rounded-2xl px-2 md:px-14 py-12 sm:py-14 md:py-16 w-[350px] sm:w-[400px] md:w-[450px] relative opacity-50">
                 <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent from-20% "></div>
 
@@ -55,7 +57,7 @@ export default function Home() {
                   resolver qualquer questão com confiança.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 justify-center items-center border rounded-2xl px-2 md:px-14 py-12 sm:py-14 md:py-16 w-[350px] sm:w-[400px] md:w-[450px]">
+              <div className="flex flex-col gap-2 justify-center items-center border rounded-2xl px-2 md:px-14 py-12 sm:py-14 md:py-16 w-[300px] sm:w-[400px] md:w-[450px]">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-b from-neutral-900 to-neutral-600 bg-clip-text text-transparent">
                   Redação
                 </h1>
@@ -80,7 +82,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="z-10 h-[100px] bg-background"></div>
       </div>
     </div>
   );

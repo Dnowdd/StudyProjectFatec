@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <div className="bg-[#5e9aff] w-full flex flex-col gap-10 md:gap-0 justify-center">
+    <div className="bg-[#5e9aff] w-full flex flex-col gap-10 md:gap-0 justify-center relative z-10">
       <div className="flex flex-col gap-10 md:flex-row items-center justify-between px-[15%] py-4">
         <div>
           <img src={Logo} alt="Logo" className="h-[200px]" />

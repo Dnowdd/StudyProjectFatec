@@ -4,7 +4,7 @@ import Footer from "./footer";
 
 export default function Dashboard() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header />
 
       <Outlet />
