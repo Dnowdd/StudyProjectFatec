@@ -1,10 +1,17 @@
 import { Button } from "@/components/ui/button";
+import DotPattern from "@/components/ui/dot-pattern";
 import { ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center gap-24">
-      <div className="flex flex-col gap-2 items-center pt-32">
+      <div className="flex flex-col gap-2 items-center pt-32 relative">
+        <DotPattern
+          className={cn(
+            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] z-[-1] opacity-50"
+          )}
+        />
         <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-center bg-gradient-to-b from-neutral-900 to-neutral-600 bg-clip-text text-transparent">
           Seu <span className="font-bold">guia</span> para o<br />
           sucesso no <span className="font-bold">vestibular</span>

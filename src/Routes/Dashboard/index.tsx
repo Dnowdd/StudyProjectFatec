@@ -4,12 +4,16 @@ import Footer from "./footer";
 
 export default function Dashboard() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
 
-      <Outlet />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
 
-      <Footer />
+      <div className="mt-auto">
+        <Footer />
+      </div>
     </div>
   );
 }
