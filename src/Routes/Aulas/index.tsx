@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
-import DotPattern from "@/components/ui/dot-pattern";
 import { ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface AulaCardProps {
   title: string;
