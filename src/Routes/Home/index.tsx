@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import DotPattern from "@/components/ui/dot-pattern";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -22,9 +23,11 @@ export default function Home() {
           uma abordagem prática e focada, você estará sempre preparado para
           qualquer desafio no vestibular.
         </p>
-        <Button className="flex gap-2 px-8 my-4">
-          Iniciar Jornada <ChevronRight size={18} />
-        </Button>
+        <Link to="/aulas">
+          <Button className="flex gap-2 px-8 my-4">
+            Iniciar Jornada <ChevronRight size={18} />
+          </Button>
+        </Link>
       </div>
       <div className="w-3/5 h-px bg-neutral-200"></div>
       <div className="flex flex-col gap-2">
