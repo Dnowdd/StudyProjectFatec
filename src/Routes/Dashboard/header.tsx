@@ -34,7 +34,7 @@ export default function Header() {
   const [actualPath, setActualPath] = useState("");
   const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState(false);
-  const logged = useState(false);
+  const [logged, setLogged] = useState(false);
 
   useEffect(() => {
     if (mobileMenu) {
