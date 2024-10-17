@@ -58,6 +58,11 @@ export default function Header() {
     setMobileMenu(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    // Check if user is logged
+    setLogged(false);
+  }, []);
+
   const pages = [
     {
       label: "Aulas",
