@@ -108,9 +108,9 @@ export default function Matérias() {
             },
           ],
         };
-      case "portugues":
+      case "linguagens":
         return {
-          title: "Português",
+          title: "Linguagens",
           description:
             "Desvende os segredos da língua portuguesa, desde interpretação de textos até gramática, e melhore suas chances de sucesso no vestibular com conteúdos didáticos e dinâmicos.",
           cards: [
@@ -118,61 +118,61 @@ export default function Matérias() {
               title: "Gramática",
               description:
                 "Revisão dos principais tópicos de gramática, incluindo sintaxe, morfologia e concordância verbal e nominal.",
-              link: "/aulas/portugues/gramatica",
+              link: "/aulas/linguagens/gramatica",
             },
             {
               title: "Interpretação de Textos",
               description:
                 "Estratégias para compreender e interpretar textos, identificando ideias principais, implícitas e explícitas.",
-              link: "/aulas/portugues/interpretacao-de-textos",
+              link: "/aulas/linguagens/interpretacao-de-textos",
             },
             {
               title: "Ortografia e Pontuação",
               description:
                 "Regras de ortografia e uso correto da pontuação para melhorar a clareza e a precisão na escrita.",
-              link: "/aulas/portugues/ortografia-e-pontuacao",
+              link: "/aulas/linguagens/ortografia-e-pontuacao",
             },
             {
               title: "Literatura Brasileira",
               description:
                 "Estudo dos principais autores e obras da literatura brasileira, com foco em movimentos literários e suas características.",
-              link: "/aulas/portugues/literatura-brasileira",
+              link: "/aulas/linguagens/literatura-brasileira",
             },
             {
               title: "Figuras de Linguagem",
               description:
                 "Análise das figuras de linguagem mais usadas na língua portuguesa e suas aplicações em diferentes contextos.",
-              link: "/aulas/portugues/figuras-de-linguagem",
+              link: "/aulas/linguagens/figuras-de-linguagem",
             },
             {
               title: "Variações Linguísticas",
               description:
                 "Exploração das variações linguísticas no Brasil, desde sotaques até gírias e diferenças regionais.",
-              link: "/aulas/portugues/variacoes-linguisticas",
+              link: "/aulas/linguagens/variacoes-linguisticas",
             },
             {
               title: "Concordância Verbal e Nominal",
               description:
                 "Regras de concordância para melhorar a precisão e correção gramatical em diferentes contextos.",
-              link: "/aulas/portugues/concordancia-verbal-e-nominal",
+              link: "/aulas/linguagens/concordancia-verbal-e-nominal",
             },
             {
               title: "Redação Oficial",
               description:
                 "Técnicas para a elaboração de textos formais, como cartas, ofícios e e-mails, seguindo normas e regras adequadas.",
-              link: "/aulas/portugues/redacao-oficial",
+              link: "/aulas/linguagens/redacao-oficial",
             },
             {
               title: "Semântica",
               description:
                 "Estudo do significado das palavras e expressões, análise de sinônimos, antônimos e polissemia.",
-              link: "/aulas/portugues/semantica",
+              link: "/aulas/linguagens/semantica",
             },
             {
               title: "Análise Sintática",
               description:
                 "Compreensão dos elementos que compõem uma oração e suas funções sintáticas no contexto das frases.",
-              link: "/aulas/portugues/analise-sintatica",
+              link: "/aulas/linguagens/analise-sintatica",
             },
           ],
         };
@@ -324,10 +324,10 @@ export default function Matérias() {
   const { title, description, cards } = getMateria(materia || "");
 
   return (
-    <div className="flex flex-col items-center justify-center gap-24">
-      <div className="flex flex-col gap-2 items-center mt-32 relative">
+    <div className="flex flex-col items-center justify-center gap-20">
+      <div className="flex flex-col gap-2 items-center mt-16 relative">
         <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-center bg-gradient-to-b from-neutral-900 to-neutral-600 bg-clip-text text-transparent">
-          <span className="font-bold">{title}</span>
+          <span className="font-medium font-spriteGraffiti">{title}</span>
         </h1>
         <p className="w-[80%] sm:w-[75%] md:w-[55%] lg:w-[40%] text-xs text-center text-neutral-600">
           {description}

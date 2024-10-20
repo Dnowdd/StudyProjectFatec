@@ -30,28 +30,10 @@ import Login from "./login";
 import Register from "./register";
 
 export default function Header() {
-  const [hasScrolled, setHasScrolled] = useState(false);
   const [actualPath, setActualPath] = useState("");
   const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState(false);
   const [logged, setLogged] = useState(false);
-
-  useEffect(() => {
-    if (mobileMenu) {
-      setHasScrolled(false);
-      return;
-    }
-
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [mobileMenu]);
 
   useEffect(() => {
     setActualPath(location.pathname.split("/")[1]);
@@ -76,14 +58,11 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`w-full h-[90px] flex items-center justify-between px-10 lg:px-20 fixed top-0 left-0 z-50 ${
-          hasScrolled ? "bg-black/15" : "bg-background"
-        }`}
-      >
+      <header className="w-full h-[90px] flex items-center justify-between px-10 lg:px-20 fixed top-0 left-0 z-50 bg-background">
         <div className="xl:text-center max-xl:w-full">
-          <Link to="/" className="text-2xl text-primary">
-            Quest<strong>Vest</strong>
+          <Link to="/" className="text-2xl text-primary font-spriteGraffiti">
+            Quest{" "}
+            <span className="text-neutral-700 font-spriteGraffiti">Vest</span>
           </Link>
         </div>
         <div
@@ -98,8 +77,9 @@ export default function Header() {
         </div>
         {mobileMenu && (
           <div className="flex flex-col gap-5 items-center py-14 md:hidden w-full bg-background fixed top-0 right-0 h-full z-[-1] top-[90px]">
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Link
+                key={index}
                 to={page.path}
                 className={`text-primary text-2xl ${
                   `/${actualPath}` == page.path ? "font-semibold" : "opacity-90"
@@ -112,8 +92,9 @@ export default function Header() {
         )}
         <div className="flex gap-14 items-center">
           <div className="flex gap-4 max-md:hidden">
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Link
+                key={index}
                 to={page.path}
                 className={`text-primary text-lg ${
                   `/${actualPath}` == page.path ? "font-semibold" : "opacity-90"

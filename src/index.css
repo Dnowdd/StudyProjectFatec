@@ -7,6 +7,13 @@
   font-family: "Roboto", sans-serif;
 }
 
+@font-face {
+  font-family: "SpriteGraffiti";
+  src: url("/fonts/SpriteGraffiti-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @layer base {
   :root {
     --background: #ffffff;

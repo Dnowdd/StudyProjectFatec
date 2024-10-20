@@ -3,6 +3,7 @@ import DotPattern from "@/components/ui/dot-pattern";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import Enem from "@/assets/enem.png";
 
 export default function Home() {
   return (
@@ -38,9 +39,7 @@ export default function Home() {
           faculdades do país.
         </p>
         <div className="flex item-center justify-center gap-4">
-          <div className="w-10 h-10 bg-neutral-400"></div>
-          <div className="w-10 h-10 bg-neutral-400"></div>
-          <div className="w-10 h-10 bg-neutral-400"></div>
+          <img src={Enem} alt="Enem" className="w-60" />
         </div>
       </div>
 

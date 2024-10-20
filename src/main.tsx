@@ -15,6 +15,7 @@ import Dashboard from "./Routes/Dashboard";
 import Aulas from "./Routes/Aulas";
 import Enem from "./Routes/Enem";
 import Matérias from "./Routes/Matérias";
+import Conteúdo from "./Routes/Conteúdo";
 
 interface PageTransitionProps {
   children: React.ReactNode;
@@ -79,6 +80,14 @@ const router = createBrowserRouter([
         element: (
           <PageTransition>
             <Matérias />
+          </PageTransition>
+        ),
+      },
+      {
+        path: "aulas/:materia/:aula",
+        element: (
+          <PageTransition>
+            <Conteúdo />
           </PageTransition>
         ),
       },

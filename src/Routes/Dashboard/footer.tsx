@@ -16,28 +16,34 @@ export default function Footer() {
               MATÉRIAS
             </h1>
             <Link
-              to="/materias/matematica"
-              className="text-neutral-200 hover:underline"
-            >
-              Matemática
-            </Link>
-            <Link
-              to="/materias/portugues"
-              className="text-neutral-200 hover:underline"
-            >
-              Português
-            </Link>
-            <Link
-              to="/materias/redacao"
+              to="/aulas/redacao"
               className="text-neutral-200 hover:underline"
             >
               Redação
             </Link>
             <Link
-              to="/materias/fisica"
+              to="/aulas/matematica"
               className="text-neutral-200 hover:underline"
             >
-              Fisíca
+              Matemática
+            </Link>
+            <Link
+              to="/aulas/linguagens"
+              className="text-neutral-200 hover:underline"
+            >
+              Linguagens
+            </Link>
+            <Link
+              to="/aulas/ciencias-da-natureza"
+              className="text-neutral-200 hover:underline"
+            >
+              Ciências da Natureza
+            </Link>
+            <Link
+              to="/aulas/ciencias-humanas"
+              className="text-neutral-200 hover:underline"
+            >
+              Ciências Humanas
             </Link>
           </div>
           <div className="flex flex-col gap-1">

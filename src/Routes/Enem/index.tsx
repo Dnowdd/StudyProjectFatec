@@ -17,8 +17,8 @@ export default function Enem() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-24 pb-40">
-      <div className="flex flex-col gap-2 items-center mt-32 relative">
+    <div className="flex flex-col items-center justify-center gap-20 pb-40">
+      <div className="flex flex-col gap-2 items-center mt-16 relative">
         <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-center bg-gradient-to-b from-neutral-900 to-neutral-600 bg-clip-text text-transparent">
           Exame Nacional do
           <br />

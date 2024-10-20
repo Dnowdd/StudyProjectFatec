@@ -52,6 +52,9 @@ export default {
           5: "var(--chart-5)",
         },
       },
+      fontFamily: {
+        spriteGraffiti: ["SpriteGraffiti", "sans-serif"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

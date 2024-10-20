@@ -26,9 +26,9 @@ function AulaCard({ title, description, path }: AulaCardProps) {
 
 export default function Aulas() {
   return (
-    <div className="flex flex-col items-center justify-center gap-24">
-      <div className="flex flex-col gap-2 items-center mt-32 relative">
-        <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-center bg-gradient-to-b from-neutral-900 to-neutral-600 bg-clip-text text-transparent">
+    <div className="flex flex-col items-center justify-center gap-20">
+      <div className="flex flex-col gap-2 items-center mt-16 relative">
+        <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-center bg-gradient-to-b from-neutral-900 to-neutral-600 bg-clip-text text-transparent ">
           Nossas <span className="font-bold">aulas</span>
         </h1>
         <p className="w-[80%] sm:w-[75%] md:w-[55%] lg:w-[40%] text-xs text-center text-neutral-600">
@@ -51,9 +51,9 @@ export default function Aulas() {
             path="/aulas/matematica"
           />
           <AulaCard
-            title="Português"
+            title="Linguagens"
             description="Desvende os segredos da língua portuguesa, desde interpretação de textos até gramática, e melhore suas chances de sucesso no vestibular com conteúdos didáticos e dinâmicos."
-            path="/aulas/portugues"
+            path="/aulas/linguagens"
           />
         </div>
         <div className="flex flex-col lg:flex-row gap-2">
