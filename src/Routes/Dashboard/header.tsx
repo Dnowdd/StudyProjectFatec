@@ -28,12 +28,14 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Login from "./login";
 import Register from "./register";
+import UserImage from "@/assets/user.png";
 
 export default function Header() {
   const [actualPath, setActualPath] = useState("");
   const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState(false);
   const [logged, setLogged] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     setActualPath(location.pathname.split("/")[1]);
@@ -55,6 +57,24 @@ export default function Header() {
       path: "/enem",
     },
   ];
+
+  interface User {
+    name: string;
+  }
+
+  useEffect(() => {
+    const user = localStorage.getItem("loggedInUser");
+    if (user) {
+      setLogged(true);
+      setUser(JSON.parse(user));
+    }
+  }, []);
+
+  const logout = () => {
+    // Remover o item 'loggedInUser' do localStorage
+    localStorage.removeItem("loggedInUser");
+    window.location.reload();
+  };
 
   return (
     <>
@@ -88,6 +108,23 @@ export default function Header() {
                 {page.label}
               </Link>
             ))}
+            {!logged && (
+              <div className="gap-2 flex flex-col mt-auto mb-20 w-2/3 sm:w-1/2">
+                <Login>
+                  <Button className="hover:bg-primary-hover w-full">
+                    Entrar
+                  </Button>
+                </Login>
+                <Register>
+                  <Button
+                    variant="outline"
+                    className="text-primary hover:text-primary-hover bg-transparent border-primary hover:border-primary-hover w-full"
+                  >
+                    Criar uma nova conta
+                  </Button>
+                </Register>
+              </div>
+            )}
           </div>
         )}
         <div className="flex gap-14 items-center">
@@ -104,19 +141,19 @@ export default function Header() {
               </Link>
             ))}
           </div>
-          {logged ? (
+          {logged && user ? (
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <div className="flex items-center gap-2 cursor-pointer select-none">
                   <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarImage src={UserImage} />
                     <AvatarFallback>QV</AvatarFallback>
                   </Avatar>
                   <ChevronDown size={20} />
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56 mr-[20px] mt-2">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
@@ -151,7 +188,7 @@ export default function Header() {
                   <span>Suporte</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={logout}>
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Desconectar</span>
                 </DropdownMenuItem>
