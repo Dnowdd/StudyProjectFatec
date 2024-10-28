@@ -4,8 +4,44 @@ import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 import Enem from "@/assets/enem.png";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Home() {
+  const materias = [
+    {
+      title: "Redação",
+      description:
+        "Aprenda a estruturar seus textos, desenvolver argumentos sólidos e conquistar a nota máxima com técnicas práticas e exemplos de redações nota 1000.",
+    },
+    {
+      title: "Matemática",
+      description:
+        "Domine os principais tópicos de matemática com exercícios comentados, resumos teóricos e dicas que vão te ajudar a resolver qualquer questão com confiança.",
+    },
+    {
+      title: "Linguagens",
+      description:
+        "Desvende os segredos de linguagens, desde interpretação de textos até gramática, e melhore suas chances de sucesso no vestibular com conteúdos didáticos e dinâmicos.",
+    },
+    {
+      title: "C. da Natureza",
+      description:
+        "Explore os conceitos fundamentais de biologia, física e química com materiais práticos e claros que facilitam a compreensão e aplicação nas provas.",
+    },
+    {
+      title: "C. Humanas",
+      description:
+        "Aprofunde-se nos temas de história, geografia, filosofia e sociologia com análises críticas e conteúdos atualizados para desenvolver seu pensamento crítico e interpretativo.",
+    },
+  ];
+
   return (
     <div className="flex flex-col items-center justify-center gap-24">
       <div className="flex flex-col gap-2 items-center pt-32 relative">
@@ -53,7 +89,7 @@ export default function Home() {
           {/* Background em baixo da curva */}
           <div className="absolute w-full top-26 md:top-20 left-0 flex flex-col items-center gap-6 overflow-hidden">
             <h1 className="text-2xl font-bold">Nossas Aulas</h1>
-            <div className="flex gap-4 py-2 h-[190px] sm:h-[230px] md:h-[250px]">
+            {/* <div className="flex gap-4 py-2 h-[190px] sm:h-[230px] md:h-[250px]">
               <div className="flex flex-col gap-2 justify-center items-center rounded-2xl px-2 md:px-14 py-12 sm:py-14 md:py-16 w-[350px] sm:w-[400px] md:w-[450px] relative opacity-50">
                 <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent from-20% "></div>
 
@@ -88,6 +124,39 @@ export default function Home() {
                   vestibular com conteúdos didáticos e dinâmicos.
                 </p>
               </div>
+            </div> */}
+            <div>
+              <Carousel
+                className="w-full max-w-[60%] mx-auto"
+                opts={{
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 2000,
+                  }),
+                ]}
+              >
+                <CarouselContent className="-ml-1">
+                  {materias.map((materia, index) => (
+                    <CarouselItem
+                      key={index}
+                      className="pl-1 md:basis-1/2 lg:basis-1/3"
+                    >
+                      <div className="m-1 flex flex-col gap-2 justify-center items-center border rounded-2xl px-2 md:px-14 py-12 sm:py-14 md:py-16 w-[300px] sm:w-[400px] md:w-[450px] select-none">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-b from-neutral-900 to-neutral-600 bg-clip-text text-transparent">
+                          {materia.title}
+                        </h1>
+                        <p className="w-[80%] md:w-full text-center text-xs text-neutral-600">
+                          {materia.description}
+                        </p>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </div>
           </div>
         </div>

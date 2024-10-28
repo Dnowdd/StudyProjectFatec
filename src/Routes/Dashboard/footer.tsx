@@ -50,29 +50,14 @@ export default function Footer() {
             <h1 className="font-extrabold md:font-bold text-background">
               ROTAS
             </h1>
-            <Link
-              to="/materias/matematica"
-              className="text-neutral-200 hover:underline"
-            >
+            <Link to="/" className="text-neutral-200 hover:underline">
               Página Inicial
             </Link>
-            <Link
-              to="/materias/portugues"
-              className="text-neutral-200 hover:underline"
-            >
+            <Link to="/aulas" className="text-neutral-200 hover:underline">
               Aulas
             </Link>
-            <Link
-              to="/materias/redacao"
-              className="text-neutral-200 hover:underline"
-            >
-              Vestibulares
-            </Link>
-            <Link
-              to="/materias/fisica"
-              className="text-neutral-200 hover:underline"
-            >
-              Contato
+            <Link to="/enem" className="text-neutral-200 hover:underline">
+              Enem
             </Link>
           </div>
         </div>
