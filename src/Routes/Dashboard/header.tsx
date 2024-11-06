@@ -156,7 +156,9 @@ export default function Header() {
                 <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => (window.location.href = "/perfil")}
+                  >
                     <User className="mr-2 h-4 w-4" />
                     <span>Perfil</span>
                   </DropdownMenuItem>
@@ -183,7 +185,9 @@ export default function Header() {
                   </DropdownMenuSub>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => (window.location.href = "/contato")}
+                >
                   <LifeBuoy className="mr-2 h-4 w-4" />
                   <span>Suporte</span>
                 </DropdownMenuItem>

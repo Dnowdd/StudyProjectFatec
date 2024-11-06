@@ -16,6 +16,8 @@ import Aulas from "./Routes/Aulas";
 import Enem from "./Routes/Enem";
 import Matérias from "./Routes/Matérias";
 import Conteúdo from "./Routes/Conteúdo";
+import Contato from "./Routes/Contato";
+import Perfil from "./Routes/Perfil";
 
 interface PageTransitionProps {
   children: React.ReactNode;
@@ -96,6 +98,22 @@ const router = createBrowserRouter([
         element: (
           <PageTransition>
             <Enem />
+          </PageTransition>
+        ),
+      },
+      {
+        path: "contato",
+        element: (
+          <PageTransition>
+            <Contato />
+          </PageTransition>
+        ),
+      },
+      {
+        path: "perfil",
+        element: (
+          <PageTransition>
+            <Perfil />
           </PageTransition>
         ),
       },

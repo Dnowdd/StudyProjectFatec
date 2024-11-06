@@ -59,6 +59,9 @@ export default function Footer() {
             <Link to="/enem" className="text-neutral-200 hover:underline">
               Enem
             </Link>
+            <Link to="/contato" className="text-neutral-200 hover:underline">
+              Contato
+            </Link>
           </div>
         </div>
       </div>
