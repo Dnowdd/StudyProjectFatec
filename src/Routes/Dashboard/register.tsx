@@ -19,7 +19,7 @@ interface IRegister {
 }
 
 // Obtenha a chave secreta do ambiente Vite
-const HASH_SECRET = import.meta.env.VITE_HASH_SECRET;
+/* const HASH_SECRET = import.meta.env.VITE_HASH_SECRET; */
 
 export default function Register({ children }: IRegister) {
   const [isLoading, setIsLoading] = useState(false);
