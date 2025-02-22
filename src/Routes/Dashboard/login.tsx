@@ -14,7 +14,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import bcrypt from "bcryptjs";
-import { supabase } from "@/config/supabaseClient";
 import Spinner20 from "@/components/loaders/Spinner20";
 
 interface ILogin {
@@ -60,11 +59,14 @@ export default function Login({ children }: ILogin) {
     }
 
     // Buscar o usuário pelo e-mail
-    const { data: users, error } = await supabase
-      .from("users")
-      .select("*")
-      .eq("email", email)
-      .single(); // Retorna apenas um usuário
+    const error = {
+      message: "Erro ao enviar mensagem",
+    };
+
+    const users = {
+      email: "",
+      password: "",
+    };
 
     // Verifica se houve um erro ou se o usuário não foi encontrado
     if (error || !users) {

@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { supabase } from "@/config/supabaseClient";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import bcrypt from "bcryptjs";
@@ -65,14 +64,9 @@ export default function Register({ children }: IRegister) {
     const hashedPassword = await bcrypt.hash(passwordWithSecret, 10); // Hash da senha combinada
 
     // Inserir o usuário diretamente na tabela 'users'
-    const { error } = await supabase.from("users").insert([
-      {
-        username,
-        name,
-        email,
-        password: hashedPassword, // Armazena a senha hash
-      },
-    ]);
+    const error = {
+      message: "Erro ao enviar mensagem",
+    };
 
     if (error) {
       toast({

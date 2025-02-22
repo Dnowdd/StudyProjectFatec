@@ -3,7 +3,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import { supabase } from "@/config/supabaseClient";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contato() {
@@ -24,13 +23,9 @@ export default function Contato() {
 
     setIsSubmitting(true);
 
-    const { error } = await supabase.from("contact").insert([
-      {
-        name,
-        email,
-        message,
-      },
-    ]);
+    const error = {
+      message: "Erro ao enviar mensagem",
+    };
 
     if (error) {
       toast({

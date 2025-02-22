@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { supabase } from "@/config/supabaseClient";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Perfil() {
@@ -37,10 +36,11 @@ export default function Perfil() {
       if (user) {
         const userParsed = JSON.parse(user);
 
-        const { data, error } = await supabase
-          .from("users")
-          .select()
-          .eq("id", userParsed.id);
+        const data = {};
+
+        const error = {
+          message: "Erro ao enviar mensagem",
+        };
 
         if (error || !data) {
           toast({
@@ -53,14 +53,14 @@ export default function Perfil() {
           return;
         }
 
-        setId(data[0].id);
+        /* setId(data[0].id);
         setName(data[0].name);
         setEditName(data[0].name);
         setUsername(data[0].username);
         setEmail(data[0].email);
         setEditEmail(data[0].email);
         setCreatedAt(data[0].created_at);
-        setLoggedInAt(userParsed.loggedInAt);
+        setLoggedInAt(userParsed.loggedInAt); */
       }
     };
 
@@ -75,13 +75,9 @@ export default function Perfil() {
     : "";
 
   const handleSaveChanges = async () => {
-    const { error } = await supabase
-      .from("users")
-      .update({
-        name: editName,
-        email: editEmail,
-      })
-      .eq("id", id);
+    const error = {
+      message: "Erro ao enviar mensagem",
+    };
 
     if (error) {
       toast({
