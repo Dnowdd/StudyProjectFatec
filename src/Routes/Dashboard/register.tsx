@@ -59,7 +59,7 @@ export default function Register({ children }: IRegister) {
     }
 
     // Combinar a senha com a chave secreta e hash
-    const passwordWithSecret = password + HASH_SECRET; // Combina a senha com a chave secreta
+    /* const passwordWithSecret = password + HASH_SECRET; */ // Combina a senha com a chave secreta
     /* const hashedPassword = await bcrypt.hash(passwordWithSecret, 10); */ // Hash da senha combinada
 
     // Inserir o usuário diretamente na tabela 'users'
