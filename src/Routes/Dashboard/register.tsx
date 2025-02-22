@@ -13,7 +13,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import bcrypt from "bcryptjs";
 
 interface IRegister {
   children: React.ReactNode;
@@ -61,7 +60,7 @@ export default function Register({ children }: IRegister) {
 
     // Combinar a senha com a chave secreta e hash
     const passwordWithSecret = password + HASH_SECRET; // Combina a senha com a chave secreta
-    const hashedPassword = await bcrypt.hash(passwordWithSecret, 10); // Hash da senha combinada
+    /* const hashedPassword = await bcrypt.hash(passwordWithSecret, 10); */ // Hash da senha combinada
 
     // Inserir o usuário diretamente na tabela 'users'
     const error = {

@@ -1,10 +1,7 @@
 import UserImage from "@/assets/user.png";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { format } from "date-fns";
-import { Mail, Pencil } from "lucide-react";
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -16,14 +13,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { Pencil } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Perfil() {
-  const [id, setId] = useState();
+  /* const [id, setId] = useState();
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [createdAt, setCreatedAt] = useState("");
-  const [loggedInAt, setLoggedInAt] = useState("");
+  const [loggedInAt, setLoggedInAt] = useState(""); */
 
   const [editName, setEditName] = useState("");
   const [editEmail, setEditEmail] = useState("");
@@ -34,7 +33,7 @@ export default function Perfil() {
     const fetchData = async () => {
       const user = localStorage.getItem("loggedInUser");
       if (user) {
-        const userParsed = JSON.parse(user);
+        /* const userParsed = JSON.parse(user); */
 
         const data = {};
 
@@ -67,12 +66,12 @@ export default function Perfil() {
     fetchData();
   }, []);
 
-  const formattedLoggedInAt = loggedInAt
+  /* const formattedLoggedInAt = loggedInAt
     ? format(new Date(loggedInAt), "HH:mm - dd/MM/yy")
     : "";
   const formattedCreatedAt = createdAt
     ? format(new Date(createdAt), "HH:mm - dd/MM/yy")
-    : "";
+    : ""; */
 
   const handleSaveChanges = async () => {
     const error = {
@@ -109,12 +108,12 @@ export default function Perfil() {
             </Avatar>
             <div className="flex flex-col justify-between py-2">
               <div>
-                <h1 className="text-2xl font-bold">{name}</h1>
+                {/* <h1 className="text-2xl font-bold">{name}</h1>
                 <p className="text-muted-foreground">{username}</p>
                 <div className="flex items-center gap-2 mt-2">
                   <Mail className="w-4 h-4" />
                   <span className="text-sm">{email}</span>
-                </div>
+                </div> */}
               </div>
               <div className="flex gap-2 mt-4 md:mt-2">
                 <Dialog>
@@ -168,7 +167,7 @@ export default function Perfil() {
               <Card>
                 <CardHeader className="p-4">
                   <CardTitle className="text-xl">
-                    {formattedLoggedInAt}
+                    {/* {formattedLoggedInAt} */}
                   </CardTitle>
                   <p className="text-sm text-muted-foreground">Último acesso</p>
                 </CardHeader>
@@ -176,7 +175,7 @@ export default function Perfil() {
               <Card>
                 <CardHeader className="p-4">
                   <CardTitle className="text-xl">
-                    {formattedCreatedAt}
+                    {/* {formattedCreatedAt} */}
                   </CardTitle>
                   <p className="text-sm text-muted-foreground">
                     Data de criação da conta
